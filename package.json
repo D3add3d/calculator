@@ -4,7 +4,7 @@
   "description": "Angular2 calculator component",
   "main": "app.js",
   "scripts": {
-    "start": "npm run webpack && npm run webpack:w",
+    "start": "npm run tsc && npm run webpack && npm run webpack:w",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "postinstall": "typings install",
