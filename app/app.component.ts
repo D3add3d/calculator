@@ -1,11 +1,14 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'calculator',
   template: `
-    <h1>Hello World</h1>
+    <h1>Hello {{world}}</h1>
   `
 })
 export class AppComponent {
-  
+  world:string = "World";
+  constructor() {
+    this.world = "World4";
+  }
 }
