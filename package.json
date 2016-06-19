@@ -8,6 +8,7 @@
     "build": "npm install && npm run postinstall && npm run rimraf && npm run webpack:production && node server.js",
     "test": "karma start",
     "postinstall": "typings install",
+    "typings": "typings",
     "webpack:production": "webpack --config config/webpack.prod.js --progress --profile --bail",
     "rimraf": "rimraf dist",
     "webpack-dev-server": "webpack-dev-server --inline --progress --port 8080 --hot"
