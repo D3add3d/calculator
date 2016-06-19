@@ -10,7 +10,7 @@
     "typings": "typings",
     "postinstall": "npm run typings install",
     "heroku-prebuild": "echo task that is run before npm install is called",
-    "heroku-postbuild": "npm run webpack-production",
+    "heroku-postbuild": "npm run webpack-production && node server.js",
     "webpack-production": "webpack --config config/webpack.prod.js --progress --profile --bail",
     "rimraf": "rimraf dist",
     "webpack-dev-server": "webpack-dev-server --inline --progress --port 8080 --hot"
