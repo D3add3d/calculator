@@ -1,0 +1,8 @@
+{
+  "name": "Calculator By Pyriter",
+  "description": "A calculator app powered by angular2",
+  "repository": "https://github.com/pyriter/calculator",
+  "logo": "",
+  "keywords": ["angularjs2", "calculator"],
+  "image": "heroku/nodejs"
+}
