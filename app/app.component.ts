@@ -7,6 +7,8 @@ import {Component} from '@angular/core';
       display: table;
       width: 100%;
       height: 20%;
+      margin: 0px;
+      padding: 0px;
     }
     .ca-number-display-text {
       display: table-cell;
