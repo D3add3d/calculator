@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "npm run webpack-dev-server",
-    "build": "npm install && npm run postinstall && npm run rimraf && npm run webpack:production && node server.js",
+    "build": "npm install && npm run postinstall && npm run rimraf && npm run webpack-production",
     "test": "karma start",
     "typings": "typings",
     "postinstall": "npm run typings install",
