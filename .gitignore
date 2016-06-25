@@ -1,5 +1,6 @@
 app/*.js
-app/*.map
+test/*.js
+*.map
 typings/
 node_modules/
 public/dist/
