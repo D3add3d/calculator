@@ -3,21 +3,37 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'calculator',
   styles: [`
+    .ca-number-display-container {
+      display: table;
+      width: 100%;
+      height: 20%;
+    }
+    .ca-number-display-text {
+      display: table-cell;
+      vertical-align: middle;
+      position: relative;
+      float: right;
+      margin: auto;
+      text-align: center;
+    }
+    .ca-numberpad-container {
+      display: table;
+      width: 100%;
+      height: 80%;
+      table-layout: fixed;
+      border: 1px; solid;
+    }
     .ca-number-display {
       width: 100%;
     }
-    .ca-flex-container {
-      display: flex;
-      flex-direction: row;
-      height: 16.6666667%;
-      position: relative;
+    .ca-row-container {
+      display: table-row;
       margin: 0px;
-      padding: 0px;
+      padding: 1px;
     }
-    .ca-flex-item {
-      width: 25%;
-      height: 100%;
-      margin: 0.5px;
+    .ca-item-container {
+      display: table-cell;
+      border: 1px solid #A9A9A9;
     }
     .ca-button {
       display: table;
@@ -32,134 +48,133 @@ import {Component} from '@angular/core';
       vertical-align: middle;
     }
     .operator {
-      background-color: orange;
+      background-color: #FF9933;
+      color: white;
     }
     .number {
       background-color: #DCDCDC;
+      color: black;
     }
-    .padding-bottom-1 {
-      margin-bottom: 0.5px;
-    }
-    .padding-bottom-2 {
-      margin-bottom: 0.25px;
+    .unary-operator {
+      background-color: #D9D9D9;
     }
   `],
   template: `
-  <div>
-    <div class="ca-flex-container">
-      <input type="text" class="ca-number-display" readonly/>
+    <div class="ca-number-display-container">
+      <span class="ca-number-display-text">AC</span>
     </div>
-    <div class="ca-flex-container padding-bottom-2">
-      <div class="ca-flex-item">
-        <div class="ca-button">
-          <span class="ca-button-text">AC</span>
+    <div class="ca-numberpad-container">
+      <div class="ca-row-container">
+        <div class="ca-item-container">
+          <div class="ca-button unary-operator">
+            <span class="ca-button-text">AC</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button unary-operator">
+            <span class="ca-button-text">+/-</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button unary-operator">
+            <span class="ca-button-text">%</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button operator">
+            <span class="ca-button-text">/</span>
+          </div>
         </div>
       </div>
-      <div class="ca-flex-item">
-        <div class="ca-button">
-          <span class="ca-button-text">+/-</span>
+      <div class="ca-row-container">
+        <div class="ca-item-container">
+          <div class="ca-button number">
+            <span class="ca-button-text">7</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button number">
+            <span class="ca-button-text">8</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button number">
+            <span class="ca-button-text">9</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button operator">
+            <span class="ca-button-text">x</span>
+          </div>
         </div>
       </div>
-      <div class="ca-flex-item">
-        <div class="ca-button">
-          <span class="ca-button-text">%</span>
+      <div class="ca-row-container">
+        <div class="ca-item-container">
+          <div class="ca-button number">
+            <span class="ca-button-text">4</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button number">
+            <span class="ca-button-text">5</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button number">
+            <span class="ca-button-text">6</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button operator">
+            <span class="ca-button-text">-</span>
+          </div>
         </div>
       </div>
-      <div class="ca-flex-item">
-        <div class="ca-button operator">
-          <span class="ca-button-text">/</span>
+      <div class="ca-row-container">
+        <div class="ca-item-container">
+          <div class="ca-button number">
+            <span class="ca-button-text">1</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button number">
+            <span class="ca-button-text">2</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button number">
+            <span class="ca-button-text">3</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button operator">
+            <span class="ca-button-text">+</span>
+          </div>
+        </div>
+      </div>
+      <div class="ca-row-container">
+        <div class="ca-item-container">
+          <div class="ca-button unary-operator">
+            <span class="ca-button-text">i</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button number">
+            <span class="ca-button-text">0</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button unary-operator">
+            <span class="ca-button-text">.</span>
+          </div>
+        </div>
+        <div class="ca-item-container">
+          <div class="ca-button operator">
+            <span class="ca-button-text">=</span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="ca-flex-container padding-bottom-2">
-      <div class="ca-flex-item">
-        <div class="ca-button number">
-          <span class="ca-button-text">7</span>
-        </div>
-      </div>
-      <div class="ca-flex-item">
-        <div class="ca-button number">
-          <span class="ca-button-text">8</span>
-        </div>
-      </div>
-      <div class="ca-flex-item">
-        <div class="ca-button number">
-          <span class="ca-button-text">9</span>
-        </div>
-      </div>
-      <div class="ca-flex-item">
-        <div class="ca-button operator">
-          <span class="ca-button-text">x</span>
-        </div>
-      </div>
-    </div>
-    <div class="ca-flex-container">
-      <div class="ca-flex-item">
-        <div class="ca-button number">
-          <span class="ca-button-text">4</span>
-        </div>
-      </div>
-      <div class="ca-flex-item">
-        <div class="ca-button number">
-          <span class="ca-button-text">5</span>
-        </div>
-      </div>
-      <div class="ca-flex-item">
-        <div class="ca-button number">
-          <span class="ca-button-text">6</span>
-        </div>
-      </div>
-      <div class="ca-flex-item">
-        <div class="ca-button operator">
-          <span class="ca-button-text">-</span>
-        </div>
-      </div>
-    </div>
-    <div class="ca-flex-container padding-bottom-2">
-      <div class="ca-flex-item">
-        <div class="ca-button number">
-          <span class="ca-button-text">1</span>
-        </div>
-      </div>
-      <div class="ca-flex-item">
-        <div class="ca-button number">
-          <span class="ca-button-text">2</span>
-        </div>
-      </div>
-      <div class="ca-flex-item">
-        <div class="ca-button number">
-          <span class="ca-button-text">3</span>
-        </div>
-      </div>
-      <div class="ca-flex-item">
-        <div class="ca-button operator">
-          <span class="ca-button-text">+</span>
-        </div>
-      </div>
-    </div>
-    <div class="ca-flex-container">
-      <div class="ca-flex-item">
-        <div class="ca-button">
-          <span class="ca-button-text">i</span>
-        </div>
-      </div>
-      <div class="ca-flex-item">
-        <div class="ca-button number">
-          <span class="ca-button-text">0</span>
-        </div>
-      </div>
-      <div class="ca-flex-item">
-        <div class="ca-button">
-          <span class="ca-button-text">.</span>
-        </div>
-      </div>
-      <div class="ca-flex-item">
-        <div class="ca-button operator">
-          <span class="ca-button-text">=</span>
-        </div>
-      </div>
-    </div>
-  </div>
   `
 })
 export class AppComponent {
