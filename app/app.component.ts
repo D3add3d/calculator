@@ -37,8 +37,11 @@ import {Component} from '@angular/core';
     .number {
       background-color: #DCDCDC;
     }
-    .padding-bottom {
+    .padding-bottom-1 {
       margin-bottom: 0.5px;
+    }
+    .padding-bottom-2 {
+      margin-bottom: 0.25px;
     }
   `],
   template: `
@@ -46,7 +49,7 @@ import {Component} from '@angular/core';
     <div class="ca-flex-container">
       <input type="text" class="ca-number-display" readonly/>
     </div>
-    <div class="ca-flex-container padding-bottom">
+    <div class="ca-flex-container padding-bottom-1">
       <div class="ca-flex-item">
         <div class="ca-button">
           <span class="ca-button-text">AC</span>
@@ -68,7 +71,7 @@ import {Component} from '@angular/core';
         </div>
       </div>
     </div>
-    <div class="ca-flex-container padding-bottom">
+    <div class="ca-flex-container padding-bottom-2">
       <div class="ca-flex-item">
         <div class="ca-button number">
           <span class="ca-button-text">7</span>
@@ -90,7 +93,7 @@ import {Component} from '@angular/core';
         </div>
       </div>
     </div>
-    <div class="ca-flex-container padding-bottom">
+    <div class="ca-flex-container padding-bottom-2">
       <div class="ca-flex-item">
         <div class="ca-button number">
           <span class="ca-button-text">4</span>
@@ -112,7 +115,7 @@ import {Component} from '@angular/core';
         </div>
       </div>
     </div>
-    <div class="ca-flex-container padding-bottom">
+    <div class="ca-flex-container padding-bottom-1">
       <div class="ca-flex-item">
         <div class="ca-button number">
           <span class="ca-button-text">1</span>
@@ -134,7 +137,7 @@ import {Component} from '@angular/core';
         </div>
       </div>
     </div>
-    <div class="ca-flex-container padding-bottom">
+    <div class="ca-flex-container">
       <div class="ca-flex-item">
         <div class="ca-button">
           <span class="ca-button-text">i</span>
