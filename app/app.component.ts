@@ -3,63 +3,158 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'calculator',
   styles: [`
-    .ca-border {
-      border-style: groove;
-    }
-    .ca-font {
-
-    }
-    #ca-number-display {
+    .ca-number-display {
       width: 100%;
-    }
-    button {
-      width: 25%;
-      font-size: large;
-    }
-    button.operator {
-      background-color: orange;
     }
     .ca-flex-container {
       display: flex;
       flex-direction: row;
       height: 16.6666667%;
-
+      position: relative;
+      margin: 0px;
+      padding: 0px;
+    }
+    .ca-flex-item {
+      width: 25%;
+      height: 100%;
+      margin: 0.5px;
+    }
+    .ca-button {
+      display: table;
+      text-align: center;
+      background-color: gray;
+      width: 100%;
+      height: 100%;
+    }
+    .ca-button-text {
+      display: table-cell;
+      font-size: x-large;
+      vertical-align: middle;
+    }
+    .operator {
+      background-color: orange;
+    }
+    .number {
+      background-color: #DCDCDC;
+    }
+    .padding-bottom {
+      margin-bottom: 0.5px;
     }
   `],
   template: `
   <div>
     <div class="ca-flex-container">
-      <input type="text" id="ca-number-display" readonly/>
+      <input type="text" class="ca-number-display" readonly/>
     </div>
     <div class="ca-flex-container">
-      <button>AC</button>
-      <button>+/-</button>
-      <button>%</button>
-      <button class="operator">/</button>
+      <div class="ca-flex-item">
+        <div class="ca-button">
+          <span class="ca-button-text">AC</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button">
+          <span class="ca-button-text">+/-</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button">
+          <span class="ca-button-text">%</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button operator">
+          <span class="ca-button-text">/</span>
+        </div>
+      </div>
+    </div>
+    <div class="ca-flex-container padding-bottom">
+      <div class="ca-flex-item">
+        <div class="ca-button number">
+          <span class="ca-button-text">7</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button number">
+          <span class="ca-button-text">8</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button number">
+          <span class="ca-button-text">9</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button operator">
+          <span class="ca-button-text">x</span>
+        </div>
+      </div>
     </div>
     <div class="ca-flex-container">
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button class="operator">*</button>
+      <div class="ca-flex-item">
+        <div class="ca-button number">
+          <span class="ca-button-text">4</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button number">
+          <span class="ca-button-text">5</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button number">
+          <span class="ca-button-text">6</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button operator">
+          <span class="ca-button-text">-</span>
+        </div>
+      </div>
     </div>
     <div class="ca-flex-container">
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button class="operator">-</button>
+      <div class="ca-flex-item">
+        <div class="ca-button number">
+          <span class="ca-button-text">1</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button number">
+          <span class="ca-button-text">2</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button number">
+          <span class="ca-button-text">3</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button operator">
+          <span class="ca-button-text">+</span>
+        </div>
+      </div>
     </div>
     <div class="ca-flex-container">
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button class="operator">+</button>
-    </div>
-    <div class="ca-flex-container">
-      <button>i</button>
-      <button>0</button>
-      <button>.</button>
-      <button class="operator">=</button>
+      <div class="ca-flex-item">
+        <div class="ca-button">
+          <span class="ca-button-text">i</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button number">
+          <span class="ca-button-text">0</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button">
+          <span class="ca-button-text">.</span>
+        </div>
+      </div>
+      <div class="ca-flex-item">
+        <div class="ca-button operator">
+          <span class="ca-button-text">=</span>
+        </div>
+      </div>
     </div>
   </div>
   `
