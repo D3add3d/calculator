@@ -13,7 +13,7 @@
     "heroku-postbuild": "npm run webpack-production",
     "webpack-production": "webpack --config config/webpack.prod.js --progress --profile --bail",
     "rimraf": "rimraf dist",
-    "webpack-dev-server": "webpack-dev-server --inline --progress --port 8080 --hot"
+    "webpack-dev-server": "webpack-dev-server --inline --progress --port 8080 --hot --host 0.0.0.0"
   },
   "repository": {
     "type": "git",
