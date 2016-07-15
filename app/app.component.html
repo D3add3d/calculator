@@ -1,7 +1,7 @@
 <div class="ca-number-display-container">
   <span class="ca-number-display-text">{{displayText}}</span>
 </div>
-<div class="ca-numberpad-container noselect">
+<div class="ca-numberpad-container noselect" (keyup)="onKeyUp($event)">
   <div class="ca-row-container">
     <div class="ca-item-container">
       <div class="ca-button unary-operator" (click)="onClick($event, BUTTONS.AC)">
