@@ -146,58 +146,60 @@ export class AppComponent {
       this.selectedOperator = null;
       this.hasProcessedEqual = false;
     }
-    switch(button) {
-      case BUTTONS.NEGATE:
-        var operand:number = -1*Number(this.displayText);
-        this.displayText = String(operand);
-        break;
-      case BUTTONS.PERCENT:
-        if(this.displayText != '' || this.displayText != '0.') {
-          var operand:number = Number(this.displayText) / 100;
+    if(this.displayText.length < 15) {
+      switch(button) {
+        case BUTTONS.NEGATE:
+          var operand:number = -1*Number(this.displayText);
           this.displayText = String(operand);
-        }
-        break;
-      case BUTTONS.PERIOD:
-        if(!this.displayText.includes('.')) {
-          if(this.displayText == '') {
-            this.displayText += '0.';
+          break;
+        case BUTTONS.PERCENT:
+          if(this.displayText != '' || this.displayText != '0.') {
+            var operand:number = Number(this.displayText) / 100;
+            this.displayText = String(operand);
           }
-          else {
-            this.displayText += '.';
+          break;
+        case BUTTONS.PERIOD:
+          if(!this.displayText.includes('.')) {
+            if(this.displayText == '') {
+              this.displayText += '0.';
+            }
+            else {
+              this.displayText += '.';
+            }
           }
-        }
-        break;
-      case BUTTONS.ZERO:
-        this.displayText += '0';
-        break;
-      case BUTTONS.ONE:
-        this.displayText += '1';
-        break;
-      case BUTTONS.TWO:
-        this.displayText += '2';
-        break;
-      case BUTTONS.THREE:
-        this.displayText += '3';
-        break;
-      case BUTTONS.FOUR:
-        this.displayText += '4';
-        break;
-      case BUTTONS.FIVE:
-        this.displayText += '5';
-        break;
-      case BUTTONS.SIX:
-        this.displayText += '6';
-        break;
-      case BUTTONS.SEVEN:
-        this.displayText += '7';
-        break;
-      case BUTTONS.EIGHT:
-        this.displayText += '8';
-        break;
-      case BUTTONS.NINE:
-        this.displayText += '9';
-        break;
-      default:
+          break;
+        case BUTTONS.ZERO:
+          this.displayText += '0';
+          break;
+        case BUTTONS.ONE:
+          this.displayText += '1';
+          break;
+        case BUTTONS.TWO:
+          this.displayText += '2';
+          break;
+        case BUTTONS.THREE:
+          this.displayText += '3';
+          break;
+        case BUTTONS.FOUR:
+          this.displayText += '4';
+          break;
+        case BUTTONS.FIVE:
+          this.displayText += '5';
+          break;
+        case BUTTONS.SIX:
+          this.displayText += '6';
+          break;
+        case BUTTONS.SEVEN:
+          this.displayText += '7';
+          break;
+        case BUTTONS.EIGHT:
+          this.displayText += '8';
+          break;
+        case BUTTONS.NINE:
+          this.displayText += '9';
+          break;
+        default:
+      }
     }
     if(this.operator == null) {
       this.firstOperand = Number(this.displayText);
