@@ -7,3 +7,5 @@ if(process.env.ENV === 'production') {
 }
 
 bootstrap(AppComponent);
+
+import '../styles.css';

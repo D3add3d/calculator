@@ -1,5 +1,4 @@
 import {Component, HostListener} from '@angular/core';
-import '../styles.css';
 
 enum BUTTONS {
   AC,
@@ -36,6 +35,7 @@ export class AppComponent {
   selectedOperator:BUTTONS = null; //This is the operator that the user has selected but not confirm
   firstOperand: number = null;
   secondOperand: number = null;
+  hasProcessedEqual: boolean = false;
 
   onClick(event:any, button:BUTTONS) {
     this.processButton(button);
@@ -75,6 +75,8 @@ export class AppComponent {
       case "9":
         buttonPressed = BUTTONS.NINE;
         break;
+      case ".":
+        buttonPressed = BUTTONS.PERIOD;
       default:
     }
     this.processButton(buttonPressed);
@@ -94,15 +96,19 @@ export class AppComponent {
         this.allClear();
         break;
       case BUTTONS.DIVIDE:
+        if(this.secondOperand != null && !this.hasProcessedEqual) this.processEqual();
         this.selectedOperator = BUTTONS.DIVIDE;
         break;
       case BUTTONS.MULTIPLY:
+        if(this.secondOperand != null && !this.hasProcessedEqual) this.processEqual();
         this.selectedOperator = BUTTONS.MULTIPLY;
         break;
       case BUTTONS.SUBTRACT:
+        if(this.secondOperand != null && !this.hasProcessedEqual) this.processEqual();
         this.selectedOperator = BUTTONS.SUBTRACT;
         break;
       case BUTTONS.ADDITION:
+        if(this.secondOperand != null && !this.hasProcessedEqual) this.processEqual();
         this.selectedOperator = BUTTONS.ADDITION;
         break;
       case BUTTONS.EQUAL:
@@ -130,16 +136,37 @@ export class AppComponent {
       default:
     }
     this.firstOperand = Number(this.displayText);
-    //this.operator = null;
+    this.hasProcessedEqual = true;
   }
 
   processNumber(button:BUTTONS) {
-    if(this.displayText == '0' || this.selectedOperator != null) {
+    if(this.displayText == '0' || this.selectedOperator != null || this.hasProcessedEqual) {
       this.displayText = '';
       this.operator = this.selectedOperator;
       this.selectedOperator = null;
+      this.hasProcessedEqual = false;
     }
     switch(button) {
+      case BUTTONS.NEGATE:
+        var operand:number = -1*Number(this.displayText);
+        this.displayText = String(operand);
+        break;
+      case BUTTONS.PERCENT:
+        if(this.displayText != '' || this.displayText != '0.') {
+          var operand:number = Number(this.displayText) / 100;
+          this.displayText = String(operand);
+        }
+        break;
+      case BUTTONS.PERIOD:
+        if(!this.displayText.includes('.')) {
+          if(this.displayText == '') {
+            this.displayText += '0.';
+          }
+          else {
+            this.displayText += '.';
+          }
+        }
+        break;
       case BUTTONS.ZERO:
         this.displayText += '0';
         break;
